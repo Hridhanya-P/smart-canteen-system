@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Student Reviews</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Student Name</th>
+        <th>Rating</th>
+        <th>Review</th>
+    </tr>
+
+    {% for review in reviews %}
+    <tr>
+        <td>{{ review.student_name }}</td>
+        <td>{{ review.rating }}/5</td>
+        <td>{{ review.review }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

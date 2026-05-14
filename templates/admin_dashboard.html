@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="dashboard-card">
+
+<h1>Canteen Admin Dashboard</h1>
+
+<div class="buttons">
+    <a href="/view_complaints">
+        <button>View Complaints</button>
+    </a>
+
+    <a href="/view_reviews">
+        <button>View Reviews</button>
+    </a>
+</div>
+
+<br>
+
+<table>
+    <tr>
+        <th>Student Name</th>
+        <th>Food Item</th>
+        <th>Quantity</th>
+        <th>Token</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.student_name }}</td>
+        <td>{{ order.food_item }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.token }}</td>
+        <td>{{ order.status }}</td>
+        <td>
+            <a href="/update_status/{{ order.id }}">
+                <button>Update</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Complaints</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Student Complaints & Suggestions</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Student Name</th>
+            <th>Complaint / Suggestion</th>
+        </tr>
+
+        {% for complaint in complaints %}
+        <tr>
+            <td>{{ complaint.student_name }}</td>
+            <td>{{ complaint.message }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Rate Your Experience</h1>
+
+<form method="POST">
+
+    <label>Rating:</label>
+    <select name="rating">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <br><br>
+
+    <textarea name="review" rows="6" cols="40" required></textarea>
+
+    <br><br>
+
+    <button type="submit">Submit Review</button>
+
+</form>
+
+</body>
+</html>
